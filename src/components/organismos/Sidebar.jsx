@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { v } from "../../styles/variables";
+import { LinksArray, SecondaryLinksArray } from "../../utils/dataEstatica";
+import { SidebarCard } from "./SidebarCard";
+import { ToggleTema } from "./ToggleTema";
+import { useState } from "react";
 
 export function Sidebar({ state, setState }) {
 
@@ -47,7 +53,7 @@ export function Sidebar({ state, setState }) {
                     </div>
                 ))}
 
-                <ToogleTema />
+                <ToggleTema />
                 <Divider />
                 {state && <SidebarCard />}  
             </Container>

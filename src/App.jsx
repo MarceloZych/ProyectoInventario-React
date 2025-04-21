@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import { Device } from './styles/breackpoints';
 import { createContext, useState } from 'react';
 import { Light, Dark } from './styles/themes';
+import { Sidebar } from './components/organismos/Sidebar';
 
 export const ThemeContext = createContext(null)
 
@@ -20,7 +21,7 @@ function App() {
           <AuthContextProvider>
             <Container className={sidebarOpen ? "active:" : ""}>
               <section className="ContentSidebar">
-                sidebar
+                <Sidebar state={sidebarOpen} setState={()=> setSidebarOpen(!sidebarOpen)} />
               </section>
 
               <section className="ContentMenuhamburguer">
