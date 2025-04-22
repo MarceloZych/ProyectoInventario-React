@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { v } from "../../styles/variables";
-import { LinksArray, SecondaryLinksArray } from "../../utils/dataEstatica";
+import { LinksArray, SecondarylinksArray } from "../../utils/dataEstatica";
 import { SidebarCard } from "./SidebarCard";
 import { ToggleTema } from "./ToggleTema";
 import { useState } from "react";
@@ -36,7 +36,7 @@ export function Sidebar({ state, setState }) {
                 ))}
 
                 <Divider />
-                {SecondaryLinksArray.map(( {icon, label, to} ) => (
+                {SecondarylinksArray.map(( {icon, label, to} ) => (
                     <div 
                         className = {state ? "LinkCointainer active" : "LinkContainer"}
                         key={label}

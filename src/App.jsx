@@ -10,7 +10,7 @@ export const ThemeContext = createContext(null)
 
 function App() {
   const [themeuse, setTheme] = useState('dark');
-  const theme = themeuse === 'light' ? "lighr" : "dark";
+  const theme = themeuse === 'light' ? "light" : "dark";
   const themeStyle = theme === 'light' ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -19,7 +19,7 @@ function App() {
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <ThemeProvider theme={themeStyle}>
           <AuthContextProvider>
-            <Container className={sidebarOpen ? "active:" : ""}>
+            <Container className={sidebarOpen ? "active" : ""}>
               <section className="ContentSidebar">
                 <Sidebar state={sidebarOpen} setState={()=> setSidebarOpen(!sidebarOpen)} />
               </section>
@@ -29,9 +29,8 @@ function App() {
               </section>
 
               <section className="ContentRoutes">
-                ContentRoutes
+                <MyRoutes />
               </section>
-              <MyRoutes />
 
             </Container>
           </AuthContextProvider>
@@ -48,7 +47,7 @@ const Container = styled.main`
   .ContentSidebar {
     display: none;
   }
-  .ContentMenuambur {
+  .ContentMenuhamburguer {
     display: block;
     position: absolute;
     left: 20px;
@@ -61,7 +60,7 @@ const Container = styled.main`
     .ContentSidebar {
       display: initial;
     }
-    .ContentMenuambur {
+    .ContentMenuhamburguer {
       display: none;
     }
   }
